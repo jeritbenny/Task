@@ -1,0 +1,39 @@
+
+<div class="container-fluid ">
+  <div class="row p-4">
+    <div class=" image col-sm-12 col-md-6 co-lg-6 col-12">
+      <img src="./assets/budget.jpg" alt="">
+    </div>
+    <div class="col-sm-12 col-md-6 co-lg-6 col-12 p-5">
+        <h1 class="heading mb-3">Login to <span class="text-primary">Budget</span></h1>
+        <p class="m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <form (ngSubmit)="login()" [formGroup]="LoginForm">
+            <div class="mb-2">
+              <input type="email" [(ngModel)]="email" class="form-control p-2" formControlName="email" id="email" aria-describedby="emailHelp" placeholder="Email">
+            </div>
+            <div *ngIf="this.LoginForm.get('email')?.errors && this.LoginForm.get('email')?.touched"><p style="color: red;">invalid email</p></div>
+
+            <div class="mb-2">
+              <input type="password" [(ngModel)]="password" formControlName="psw" class="form-control p-2" id="psw" placeholder="password">
+            </div>
+            <div *ngIf="this.LoginForm.get('psw')?.errors && this.LoginForm.get('psw')?.touched"><p style="color: red;">invalid password</p></div>
+
+            <div class="mb-3 form-check ">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 pt-3">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Keep me logged in</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12 px-2 pt-3">
+                        <h6 >Forgot password?</h6>
+                    </div>
+                </div>
+            
+            </div>
+            <button type="submit" value="login" class=" container-fluid btn btn-primary">Login</button>
+            <div class="text-center mt-3" >Create new account? <button class="btn btn-primary" (click)="reg()">click here.</button></div>
+          </form>
+    </div>
+  </div>
+</div>
+

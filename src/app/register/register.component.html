@@ -1,0 +1,36 @@
+
+<div class="container-fluid ">
+    <div class="row p-4">
+      <div class=" image col-sm-12 col-md-6 co-lg-6 col-12">
+        <img src="./assets/pic.jpg" alt="">
+      </div>
+      <div class="col-sm-12 col-md-6 co-lg-6 col-12 p-5">
+          <h1 class="heading mb-3">Register into <span class="text-primary">Budget</span></h1>
+          <p class="m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <form (ngSubmit)="register()" [formGroup]="registerForm">
+            <div class="mb-2 ">
+                <input type="text"  [(ngModel)]="name" formControlName="uname" class="form-control p-2" id="uname" aria-describedby="emailHelp" placeholder="Full Name">
+              </div>
+              <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched"><p style="color: red;">invalid Name</p></div>
+
+              <div class="mb-2 ">
+                <input type="email" [(ngModel)]="email" formControlName="email" class="form-control p-2" id="email" aria-describedby="emailHelp" placeholder="Email">
+              </div>
+              <div *ngIf="this.registerForm.get('email')?.errors && this.registerForm.get('email')?.touched"><p style="color: red;">invalid email</p></div>
+
+              <div class="mb-2">
+                <input type="password" [(ngModel)]="password" formControlName="psw" class="form-control p-2" id="psw" placeholder="password">
+              </div>
+              <div *ngIf="this.registerForm.get('psw')?.errors && this.registerForm.get('psw')?.touched"><p style="color: red;">invalid password</p></div>
+
+           
+              
+              
+              <button type="submit"  value="register" class=" container-fluid btn btn-primary">Register</button>
+              <div class="text-center mt-3">Already have an account?<button class="btn btn-primary" (click)="log()">just click</button></div>
+            </form>
+      </div>
+    </div>
+  </div>
+  
+  
